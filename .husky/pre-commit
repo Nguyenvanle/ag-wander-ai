@@ -1,0 +1,10 @@
+echo "🛠️  Building project..."
+npm run build
+
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed. Please fix the build issues and try again."
+  exit 1
+fi
+
+echo "🔍 Running linters..."
+npx lint-staged

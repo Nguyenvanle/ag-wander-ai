@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "pencil": {
+      "type": "stdio",
+      "command": "/Users/sensedev/.antigravity/extensions/highagency.pencildev-0.6.28-universal/out/mcp-server-darwin-x64",
+      "args": ["--app", "antigravity"],
+      "env": {}
+    }
+  }
+}
