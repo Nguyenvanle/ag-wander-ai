@@ -11,3 +11,7 @@ count.txt
 .output
 .vinxi
 todos.json
+
+# Ignore agent skills directory
+.agents/
+.windsurf/

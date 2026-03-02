@@ -106,7 +106,7 @@ export default [
         node: true
       }
     },
-    ignores: ['node_modules/', 'dist/', 'build/', '.next/', 'coverage/']
+    ignores: ['node_modules/', 'dist/', 'build/', '.next/', 'coverage/', '.agents/', '.windsurf/']
   },
   {
     files: ['src/**/*.{ts,tsx}'],

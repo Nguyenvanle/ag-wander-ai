@@ -1,0 +1,20 @@
+# Prettier ignore file itself
+.prettierignore
+
+# Agent skills directory
+.agents/
+.windsurf/
+
+# Other generated files
+.output/
+.node_modules/
+dist/
+build/
+coverage/
+
+# Migration files
+*.sql
+
+# Config files that shouldn't be formatted
+.env.local.example
+.gitignore

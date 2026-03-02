@@ -1,4 +1,8 @@
-Welcome to your new TanStack app!
+Welcome to AnGiang Wander AI!
+
+# AnGiang Wander AI
+
+An AI-powered travel planner for An Giang province, built with TanStack Start, Drizzle ORM, and Supabase.
 
 # Getting Started
 
@@ -6,8 +10,70 @@ To run this application:
 
 ```bash
 npm install
-npm run start
+npm run dev
 ```
+
+## Database Setup
+
+This project uses [Drizzle ORM](https://orm.drizzle.team/) with [Supabase](https://supabase.com/) as the database backend.
+
+### Prerequisites
+
+1. Create a [Supabase project](https://database.new/)
+2. Get your database connection string from Supabase Dashboard > Settings > Database > Connection String
+
+### Environment Setup
+
+1. Copy the example environment file:
+
+```bash
+cp .env.local.example .env.local
+```
+
+2. Update `DATABASE_URL` in `.env.local` with your Supabase connection string:
+
+```env
+DATABASE_URL=postgresql://postgres:[YOUR-PASSWORD]@db.[YOUR-PROJECT-REF].supabase.co:5432/postgres
+```
+
+### Database Migration
+
+Generate and apply migrations to set up your database schema:
+
+```bash
+# Generate migration files
+npm run db:generate
+
+# Push schema changes to database
+npm run db:push
+
+# Or use migrations (recommended for production)
+npm run db:migrate
+```
+
+### Database Management
+
+Use these commands for database operations:
+
+```bash
+# Open Drizzle Studio for database management
+npm run db:studio
+
+# Generate new migrations after schema changes
+npm run db:generate
+
+# Push changes directly to database (development)
+npm run db:push
+```
+
+## Database Schema
+
+The application uses two main tables:
+
+- **`locations`**: Stores tourist destinations in An Giang
+  - `id`, `name`, `description`, `latitude`, `longitude`, `image_url`, `category`
+- **`itineraries`**: Stores user trip plans
+  - `id`, `user_id`, `title`, `trip_data` (JSON), `created_at`, `updated_at`
 
 # Building For Production
 
