@@ -9,13 +9,10 @@ export const locations = pgTable(
     description: text('description'),
     latitude: real('latitude').notNull(),
     longitude: real('longitude').notNull(),
-    imageUrl: text('image_url'),
+    image_url: text('image_url'),
     category: varchar('category', { length: 50 }).notNull()
   },
-  (table) => ({
-    nameIdx: index('locations_name_idx').on(table.name),
-    categoryIdx: index('locations_category_idx').on(table.category)
-  })
+  (table) => [index('locations_name_idx').on(table.name), index('locations_category_idx').on(table.category)]
 )
 
 // Itineraries table for storing user trip plans
@@ -29,10 +26,10 @@ export const itineraries = pgTable(
     createdAt: timestamp('created_at').notNull().defaultNow(),
     updatedAt: timestamp('updated_at').notNull().defaultNow()
   },
-  (table) => ({
-    userIdIdx: index('itineraries_user_id_idx').on(table.userId),
-    createdAtIdx: index('itineraries_created_at_idx').on(table.createdAt)
-  })
+  (table) => [
+    index('itineraries_user_id_idx').on(table.userId),
+    index('itineraries_created_at_idx').on(table.createdAt)
+  ]
 )
 
 // Type inference for TypeScript

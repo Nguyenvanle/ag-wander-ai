@@ -4,7 +4,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 import appCss from '../styles.css?url'
 
-import { Header } from '@/components/layout'
+import { AppQueryClientProvider } from '@/components/providers'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -38,19 +38,20 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Header />
-        {children}
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right'
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />
-            }
-          ]}
-        />
+        <AppQueryClientProvider>
+          {children}
+          <TanStackDevtools
+            config={{
+              position: 'bottom-right'
+            }}
+            plugins={[
+              {
+                name: 'Tanstack Router',
+                render: <TanStackRouterDevtoolsPanel />
+              }
+            ]}
+          />
+        </AppQueryClientProvider>
         <Scripts />
       </body>
     </html>
