@@ -14,15 +14,20 @@ _Mục tiêu: Dựng xong khung dự án, kết nối Database và chuẩn bị 
 
 - [x] **1. Setup Database (Supabase)**
   - [x] Tạo project mới trên Supabase.
-  - [x] Thiết kế Table `locations` (Các cột: `id`, `name`, `description` (lấy từ Wiki), `latitude`, `longitude`, `image_url`, `category`). -[ ] Thiết kế Table `itineraries` (Lưu lịch trình user: `id`, `user_id`, `title`, `trip_data` (chuỗi JSON), `created_at`).
-  - [x] Thêm khoảng 15-20 địa điểm nổi tiếng ở An Giang vào table `locations` (Rừng Tràm Trà Sư, Miếu Bà, Núi Cấm, Chợ nổi Long Xuyên, Hồ Tà Pạ...). -[ ] **2. Khởi tạo Project (Frontend)**
+  - [x] Thiết kế Table `locations` (Các cột: `id`, `name`, `description` (lấy từ Wiki), `latitude`, `longitude`, `image_url`, `category`).
+  - [x] Thiết kế Table `itineraries` (Lưu lịch trình user: `id`, `user_id`, `title`, `trip_data` (chuỗi JSON), `created_at`).
+  - [x] Thêm khoảng 15-20 địa điểm nổi tiếng ở An Giang vào table `locations` (Rừng Tràm Trà Sư, Miếu Bà, Núi Cấm, Chợ nổi Long Xuyên, Hồ Tà Pạ...).
+- [x] **2. Khởi tạo Project (Frontend)**
   - [x] Init dự án bằng **TanStack Start** (hỗ trợ SSR và File-based routing).
   - [x] Cài đặt **Tailwind CSS**.
   - [x] Cài đặt **shadcn/ui** và init các component cơ bản (`Button`, `Card`, `Input`, `Form`, `Sheet`/`Dialog`).
   - [x] Setup thư mục chuẩn: `/components`, `/routes`, `/lib`, `/server` (cho server functions).
-- [ ] **3. Kết nối Supabase & TanStack Query**
-  - [ ] Tạo file `supabaseClient.ts` để cấu hình Supabase SDK.
-  - [ ] Viết hàm fetch data `getLocations()` và bọc nó bằng TanStack Query để lấy dữ liệu từ table `locations`.
+- [x] **3. Kết nối Supabase & TanStack Query**
+  - [x] Tạo file `supabase-client.ts` để cấu hình Supabase SDK.
+  - [x] Viết hàm fetch data `useLocations()` và bọc nó bằng TanStack Query để lấy dữ liệu từ table `locations`.
+  - [x] Tạo `LocationsList` component hiển thị danh sách địa điểm.
+  - [x] Setup `QueryClientProvider` cho toàn bộ ứng dụng.
+  - [x] Test data flow từ Supabase -> Frontend thành công.
 
 ---
 
